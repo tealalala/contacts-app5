@@ -11,7 +11,7 @@ class Api::ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(first_name: "y", last_name: "u", email: "i", phonenumber: "o")
+    @contact = Contact.new(first_name: params[:input_first_name], last_name: params[:input_last_name], email: params[:input_email], phonenumber: params[:input_phonenumber])
     @contact.save
     render 'show.json.jbuilder'
   end
@@ -19,10 +19,10 @@ class Api::ContactsController < ApplicationController
   def update
     contact_id = params[:id]
     @contact = Contact.find_by(id: contact_id)
-    @contact.first_name = "d"
-    @contact.last_name = "f"
-    @contact.email = "g"
-    @contact.phonenumber = "j"
+    @contact.first_name = params[:input_first_name]
+    @contact.last_name = params[:input_last_name]
+    @contact.email = params[:input_email]
+    @contact.phonenumber = params[:input_phonenumber]
     @contact.save
     render 'show.json.jbuilder'
   end
