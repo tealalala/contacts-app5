@@ -8,6 +8,6 @@ class Contact < ApplicationRecord
   end
 
   def japan_phone_number
-    "+81 #{phonenumber}"
+    "+81 #{phone_number}"
   end
 end
