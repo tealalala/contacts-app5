@@ -9,3 +9,4 @@ json.created_at contact.created_at
 # json.updated_at contact.updated_at
 json.updated_at contact.friendly_updated_at
 json.japan_phone_number contact.japan_phone_number
+json.bio contact.bio
