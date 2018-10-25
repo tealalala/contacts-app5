@@ -1,5 +1,8 @@
 class Api::ContactsController < ApplicationController
   def index
+    p 'current_user'
+    p current_user
+
     @contacts = Contact.all
     render 'index.json.jbuilder'
   end
@@ -11,7 +14,15 @@ class Api::ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(first_name: params[:input_first_name], middle_name: params[:input_middle_name], last_name: params[:input_last_name], email: params[:input_email], phone_number: params[:input_phone_number], bio: params[:input_bio])
+    @contact = Contact.new(
+      user_id: current_user.id,
+      first_name: params[:input_first_name],
+      middle_name: params[:input_middle_name],
+      last_name: params[:input_last_name],
+      email: params[:input_email],
+      phone_number: params[:input_phone_number],
+      bio: params[:input_bio]
+    )
     @contact.save
     render 'show.json.jbuilder'
   end

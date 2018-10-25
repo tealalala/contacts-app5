@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # verb "/urls" => "namespace/controllers#action"
 
   namespace :api do
+    ## contacts
     #index
     get '/contacts' => 'contacts#index'
 
@@ -17,6 +18,12 @@ Rails.application.routes.draw do
 
     # #delete
     delete '/contacts/:id' => 'contacts#destroy'
+
+
+    ## users
+    # create
+    post "/users" => "users#create"
+    post "/sessions" => "sessions#create"
   end
 
 end
