@@ -1,0 +1,2 @@
+class ContactGroup < ApplicationRecord
+end
