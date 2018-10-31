@@ -1,7 +1,10 @@
 class Api::ContactsController < ApplicationController
   def index
+    p 'current user'
+    p current_user
+    p '*' * 50
     if current_user
-      group = Group.find_by(name: params[:input_group])
+      group = Group.find_by(name: params[:group_name])
       @contacts = group.contacts
       @contacts = @contacts.where(user_id: current_user.id)
     else
