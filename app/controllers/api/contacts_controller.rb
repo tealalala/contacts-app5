@@ -8,6 +8,13 @@ class Api::ContactsController < ApplicationController
   def show
     contact_id = params[:id]
     @contact = Contact.find_by(id: contact_id)
+
+    if params[:input_group]
+      group_name = params[:input_group]
+      group = Group.find_by(name: group_name)
+      @contact.groups
+    end
+
     render 'show.json.jbuilder'
   end
 
