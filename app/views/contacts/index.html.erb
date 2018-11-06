@@ -1,0 +1,11 @@
+<h1>Contacts Index</h1>
+
+<% @contacts.each do |contact| %>
+  <p>first name: <%= contact.first_name %></p>
+  <p>middle name: <%= contact.middle_name %></p>
+  <p>last name: <%= contact.last_name %></p>
+  <p>email: <%= contact.email %></p>
+  <p>phone number: <%= contact.phone_number %></p>
+  <p>bio: <%= contact.bio %></p>
+  <hr>
+<% end %>
