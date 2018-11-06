@@ -1,8 +1,12 @@
 <h1>Show 1 Contact</h1>
 
+<a href="/contacts">Back to Index</a>
+
 <p>first name: <%= @contact.first_name %></p>
 <p>middle name: <%= @contact.middle_name %></p>
 <p>last name: <%= @contact.last_name %></p>
 <p>email: <%= @contact.email %></p>
 <p>phone number: <%= @contact.phone_number %></p>
 <p>bio: <%= @contact.bio %></p>
+
+<a href="/contacts/<%= @contact.id %>" data-method="delete" rel="nofollow">Delete this</a>
