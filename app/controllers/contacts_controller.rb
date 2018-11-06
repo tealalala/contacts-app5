@@ -5,9 +5,8 @@ class ContactsController < ApplicationController
   end
 
   def show
-    contact_id = params[:id]
-    @contact = Contact.find_by(id: contact_id)
-    render 'show.json.jbuilder'
+    @contact = Contact.find_by(id: params[:id])
+    render 'show.index.erb'
   end
 
   def create
